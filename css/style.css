@@ -1,0 +1,25 @@
+@font-face{
+    src : url(../fonts/Courgette-Regular.ttf);
+    font-family: cou;
+}
+h1{
+    font-size: 70px;
+    font-family: cou;
+    text-align: center;
+    color: whitesmoke;
+
+}
+body{
+    background-color: black;
+}
+h2{
+    font-family: cou;
+    text-align: center;
+    color: burlywood; 
+    font-size: 40px;
+}
+#image{
+    float: left;
+    margin: 10%;
+    padding: 10%;
+}
