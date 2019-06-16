@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/fonts.css">
     <link rel="shortcut icon" href="../image/pizza-slice.png">
+    <script type="text/javascript" src="../js/jquery-3.4.1.js"></script>
     <script src="js/script.js"></script>
 </head>
 
@@ -19,21 +20,21 @@
                 <img src="../image/7.jpg" style="width:300px;height:300px;">
                 <p>size</p>
                 <form>
-                    <input type="checkbox" name="size" value="large " > large<br>
-                    <input type="checkbox" name="size" value="medium"> medium<br>
-                    <input type="checkbox" name="size" value="small"> small
+                    <input type="checkbox" name="size" value="large" onclick="validateWhichOne" > large<br>
+                    <input type="checkbox" name="size" value="medium"onclick="validateWhichOne"> medium<br>
+                    <input type="checkbox" name="size" value="small"onclick="validateWhichOne"> small
                 </form>
                 <input type="text" placeholder="" class="form-control popovers" data-toggle="popover" data-placement="top" data-original-title="The Title" data-content="Content goes here..." data-trigger="click" aria-describedby="popover369342">
             </div>
             <div class="col-4">
-                <img src="../image/3.jpg" style="width:300px;height:300px;">
+                <img src="../image/3.jpg" style="width:300px;height:300px;"onclick="validateWhichOne">
                 <p>Toppings</p>
                 <form>
-                    <input type="checkbox" name="type" value="Pepperoni" > Pepperoni<br>
-                    <input type="checkbox" name="type" value="Mushroom">Mushroom<br>
-                    <input type="checkbox" name="type" value="Bacon">Bacon<br>
-                    <input type="checkbox" name="type" value="Extra Cheese">Extra Cheese<br>
-                    <input type="checkbox" name="type" value="Pesto">Pesto
+                    <input type="checkbox" name="type" value="Pepperoni" onclick="validateWhichOne"> Pepperoni<br>
+                    <input type="checkbox" name="type" value="Mushroom" onclick="validateWhichOne">Mushroom<br>
+                    <input type="checkbox" name="type" value="Bacon" onclick="validateWhichOne">Bacon<br>
+                    <input type="checkbox" name="type" value="Extra Cheese" onclick="validateWhichOne">Extra Cheese<br>
+                    <input type="checkbox" name="type" value="Pesto" onclick="validateWhichOne">Pesto
                 </form>
                 <input type="text" placeholder="" class="form-control popovers" data-toggle="popover" data-placement="top" data-original-title="The Title" data-content="Content goes here..." data-trigger="click" aria-describedby="popover369342">
             </div>
@@ -41,9 +42,9 @@
                     <img src="../image/9.jpg" style="width:300px;height:300px;">
                     <p>crust</p>
                     <form>
-                            <input type="checkbox" name="crust" value="Crispy " > Crispy<br>
-                            <input type="checkbox" name="crust" value="Stuffed"> Stuffed<br>
-                            <input type="checkbox" name="crust" value="Glutten free"> Glutten free
+                            <input type="checkbox" name="crust" value="Crispy " onclick="validateWhichOne"> Crispy<br>
+                            <input type="checkbox" name="crust" value="Stuffed" onclick="validateWhichOne"> Stuffed<br>
+                            <input type="checkbox" name="crust" value="Glutten free" onclick="validateWhichOne"> Glutten free
                     </form>
                     <input type="text" placeholder="" class="form-control popovers" data-toggle="popover" data-placement="top" data-original-title="The Title" data-content="Content goes here..." data-trigger="click" aria-describedby="popover369342">
             </div>
@@ -52,7 +53,7 @@
     </div>
 
 </body>
-<script src="js/script.js"></script>
+
 </html>
 
 

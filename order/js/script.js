@@ -1,3 +1,34 @@
+/*********************checkbox workability************* */
+$(document).ready()
+function validateWhichOne(){
+    var checkboxes=document.getElementsByName("");
+ var items=0;
+  for (var i=0;i<checkboxes.length;i++)
+  {
+      if(checkboxes[i].checked)
+      items++;
+  }
+if(items>1){
+    alert ("you cannt select more than two in one pizza")
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************prices Workability****************** */
 var crustOne={name:"crispy",price:100}
 var crustTwo={name:"stuffed",price:200}
 var crustThree={name:"Glutten Free",price:50}
@@ -38,12 +69,4 @@ var sizes=[sizeOne,sizeTwo,sizeThree]
 
 
 
-function printChecked() {
-    var items = document.getElementByName("size");
-    var selectedmitems = "";
-    for (i = 0; i < items.length; i++) {
-        if (items[i].type == 'checkbox' && items[i].checked == true)
-            selectedItems += items[i].value + "\n";
-    }
-    alert(selectedItems);
-}
+
