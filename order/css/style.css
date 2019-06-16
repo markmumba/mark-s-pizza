@@ -25,4 +25,60 @@ form{
     font-family: shoj;
     
 }
+p1{
+    text-align: center;
+    border: 1px solid #3498db;
+    background:none;
+    padding: 10px 20px;
+    font-family: shoj;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    height: 80px;
+    color: black;
+}
+p1:hover{
+    background: lightgreen;
+    cursor: pointer;
+
+/* p1::before{ 
+    content:"";
+    display: block;
+    background: lightgreen;
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5s;
+    filter:blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+}
+p1::after{
+    content:"";
+    display: block;
+    background: lightgreen;
+    width: 60px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter:blur(30px);
+    transform: translateX(-130px) skewX(-15d);
+}
+
+
+}
+p1:hover:before{
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+}
+p1:hover:after{
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .1;
+    transition: .7s;
+}
 
