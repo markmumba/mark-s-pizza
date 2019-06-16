@@ -1,0 +1,28 @@
+@font-face{
+    src : url(../fonts/Shojumaru-Regular.ttf);
+    font-family: shoj;
+}
+body{
+    background-image:url(../../image/25.jpg);
+    background-size: cover;
+}
+h1{
+    font-family: shoj;
+    font-size: 90px;
+    text-align: center;
+    color:white;
+    background-color: black;
+}
+p{
+    color:black;
+    text-align: center;
+    font-family: shoj;
+}
+form{
+    text-align: left;
+    color:black;
+    font-size: 40px;
+    font-family: shoj;
+    
+}
+
