@@ -43,6 +43,10 @@ p1{
 p1:hover{
     background: lightgreen;
     cursor: pointer;
+}
+.form-control {
+    background-color: transparent;
+}
 
 /* p1::before{ 
     content:"";
