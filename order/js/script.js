@@ -1,28 +1,26 @@
 /*********************checkbox workability************* */
 $(document).ready()
+function validateWhichOne(){
+    var checkboxes=document.getElementsByName("");
+ var items=0;
+  for (var i=0;i<checkboxes.length;i++)
+  {
+      if(checkboxes[i].checked)
+      items++;
+  }
+if(items>1){
+    alert ("you cannt select more than two in one pizza")
+}
+}
 $("#submit").click(function () {
-    $("#orderform").Toggle();
+    $("form").slideToggle();
     $(".all").hide();
 });
 
 $("#order").click(function () {
-    $(".all").Toggle();
-    $("#orderform").hide();
+    $(".all").slideToggle();
+    $("form").hide();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /******************prices Workability****************** */
 var crustOne={name:"crispy",price:100}
@@ -57,12 +55,10 @@ var sizes=[sizeOne,sizeTwo,sizeThree]
     alert(size.Toppings.crust)
 })*/
 
-
-
 /*******************************Bussiness logic***************************** */
  function order(size,topping,crust){
     
-    // var sideA =parseInt(document.getElementById("sideA").value);
+     var items =document.getElementById("pop").value;
     sizes=["large","medium","small"];
     Toppings=["Pepperoni","Mushroom","Bacon","Extra Cheese","Pesto"];
     Crust=["Crispy","Stuffed","Glutten Free"];
@@ -79,28 +75,28 @@ var sizes=[sizeOne,sizeTwo,sizeThree]
       results.innerHTML= price+=1000
     }
     if (topping===Toppings[0]){
-        price+=600
+        results.innerHTML= price+=600
     }
     if (topping===Toppings[1]){
-     price+=500
+        results.innerHTML=price+=500
     } 
     if(topping===Toppings[2]){
-        price+=700
+        results.innerHTML=  price+=700
     }  
     if(topping===Toppings[3]){
-        price+=200
+        results.innerHTML= price+=200
     }
     if(topping===Toppings[4]){
-        price+=600
+        results.innerHTML= price+=600
     }
     if (crust===Crust[0]){
-        price+=100
+        results.innerHTML= price+=100
     }
     if(crust===crust[1]){
-        price+=200
+        results.innerHTML= price+=200
     }
     if (crust===Crust[2]){
-        price+=50
+        results.innerHTML= price+=50
     }
 
 }

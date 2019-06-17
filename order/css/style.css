@@ -21,7 +21,7 @@ p{
 form{
     text-align: left;
     color:black;
-    font-size: 40px;
+    font-size: 20px;
     font-family: shoj;
     
 }
@@ -51,7 +51,7 @@ p1:hover{
     font-size: 20px;
     color: black;
 }
-#orderform{
+{
     display:none;
 }
 
