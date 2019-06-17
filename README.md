@@ -12,8 +12,8 @@ This program can only be accessed on a computer with Git and Atom installed.
 ## Known Bugs
 
 No known bugs.
-The program should... | Example Input | Example Output
------ | ----- | -----
+## The program should
+... | Example Input | Example Output----- | ----- | -----
 Calculate the price of a custom pizza based on the options selected in the form | Custom Pizza Form: Size-Small, 10"; Sauce-Alfredo; Cheese-Cheese; Veggie 1-Onions; Veggie 2-Green Peppers; Meat-Sausage | $12
 Display the total price of the custom pizza in the Cart column, and simultaneously refresh the form | Custom Pizza Form: Size-Small, 10"; Sauce-Alfredo; Cheese-Cheese; Veggie 1-Onions; Veggie 2-Green Peppers; Meat-Sausage, Cart: Price $-- | Cart: Price $12
 Add $3 to the Cart when a Sides button is clicked | Cart: Price $--, Sides: Italian Soda | Cart: Price $3
