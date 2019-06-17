@@ -1,5 +1,5 @@
 # mark's pizza
-![web page](./image/1.png)
+
 ### description 
 This is website where one can order a custom pizza according to the size ,the toppings wanted and the type of crust which you prefer.
 ## Setup/Installation Requirements
