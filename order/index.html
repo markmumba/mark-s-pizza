@@ -3,14 +3,15 @@
 
 <head>
     <title>order menu</title>
-    
+
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <script src="../js/script.js"></script>
     <link rel="shortcut icon" href="../image/pizza-slice.png">
     <script type="text/javascript" src="../js/jquery-3.4.1.js"></script>
-    <script src="js/script.js"></script>
+   
 </head>
 
 <body>
@@ -18,52 +19,107 @@
         <h1> order menu</h1>
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col-md-4">
                     <img src="../image/7.jpg" style="width:300px;height:300px;">
                     <p>size</p>
-                    <form id="form">
-                        <input type="checkbox" name="size" value="large" onclick="validateWhichOne" id="pop"> large<br>
-                        <input type="checkbox" name="size" value="medium" onclick="validateWhichOne"id="pop"> medium<br>
-                        <input type="checkbox" name="size" value="small" onclick="validateWhichOne"id="pop"> small
-                    </form>
+                    <select required class="form-control" id="size">
 
-                </div>
-                <div class="col-4">
-                    <img src="../image/3.jpg" style="width:300px;height:300px;">
-                    <p>Toppings</p>
-                    <form id="form">
-                        <input type="checkbox" name="type" value="Pepperoni" onclick="validateWhichOne"id="pop"> Pepperoni<br>
-                        <input type="checkbox" name="type" value="Mushroom" onclick="validateWhichOne"id="pop">Mushroom<br>
-                        <input type="checkbox" name="type" value="Bacon" onclick="validateWhichOne"id="pop">Bacon<br>
-                        <input type="checkbox" name="type" value="Extra Cheese" onclick="validateWhichOne"id="pop">Extra
-                        Cheese<br>
-                        <input type="checkbox" name="type" value="Pesto" onclick="validateWhichOne"id="pop">Pesto
-                    </form>
+                        <option value="Small">Small, 10"</option>
+                        <option value="Medium">Medium, 14"</option>
+                        <option value="Large">Large, 18"</option>
+                    </select>
 
-                </div>
-                <div class="col-4">
-                    <img src="../image/9.jpg" style="width:300px;height:300px;">
-                    <p>crust</p>
-                    <form id="form">
-                        <input type="checkbox" name="crust" value="Crispy " onclick="validateWhichOne"id="pop"> Crispy<br>
-                        <input type="checkbox" name="crust" value="Stuffed" onclick="validateWhichOne"id="pop"> Stuffed<br>
-                        <input type="checkbox" name="crust" value="Glutten free" onclick="validateWhichOne"id="pop"> Glutten
-                        free
-                    </form>
 
+                    <div class="col-md-4">
+                        <img src="../image/3.jpg" style="width:300px;height:300px;">
+                        <p>Toppings</p>
+                        <select required class="form-control" id="topping">
+
+                            <option value="Peperoni">Peperoni</option>
+                            <option value="Mushroom">Mushroom</option>
+                            <option value="Bacon">Bacon</option>
+                            <option value="Extra Cheese">Extra Cheese</option>
+                            <option value="Pesto">Pesto</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../image/9.jpg" style="width:300px;height:300px;">
+                        <p>crust</p>
+                        <select required class="form-control" id="crust">
+
+                            <option value="Crispy">Crispy</option>
+                            <option value="Stuffed">Stuffed</option>
+                            <option value="Gluten-free">Gluten-free</option>
+                        </select>
+                    </div>
+                   <p1> <button type="submit" class="btn btn-success">Place Order</button></p1>
                 </div>
 
             </div>
-            <p1><input type="button" class="btn btn-1" onclick="printChecked()" value="order now" id="submitt"></p1>
-            <form>
-                    size: <br>
-                    Toppings:<br>
-                    crust:<br>
-                    price:<br>
-                </form>
-                <p1><input type="button" class="btn btn-1" onclick="printChecked()" value="re-order" id="order"></p1>
+
+            <div class="col-md-6">
+                <div class="col-xs-6" id="price-content">
+                    <h3 class="page-header">Pizza Cost BreakDown</h3>
+                    <div id="order-details">
+                        <p id="pizza-size">Pizza Size :</p>
+                        <p id="pizza-crust">Pizza Crust :</p>
+                        <p id="pizza-topping">Pizza Topping :</p>
+                        <h2>Price in Kshs : <span id="final-cost"></span></h2>
+                    </div>
+                    <button type="btn" class="btn btn-primary" id="delivery-btn">Want delivery ?</button>
+                    <button type="btn" class="btn btn-danger" id="checkout-btn">Checkout</button>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="container-fluid jumbotron">
+            <form id="address-form">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h2 class="panel-title">Enter Address For Us To Deliver to you</h2>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label class="control-label">Enter City</label>
+                        <input type="text" id="cityName" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label class="control-label">Enter Avenue</label>
+                        <input type="text" id="cityAvenueName" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label class="control-label">Enter Street</label>
+                        <input type="text" id="cityStreetName" class="form-control">
+                      </div>
+                    </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label class="control-label">Enter Your Phone Number</label>
+                        <input type="number" id="phoneNumber" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-footer">
+                  <button class="btn btn-primary" id="address-btn" type="submit">Submit Address</button>
+                </div>
+              </div>
+            </form>
+            <div class="alert alert-success" id="alert-success">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <strong>Thank You For Oddering Your Pizza.Deliver is free.</strong>Go back Home
+            </div>
+          </div>
+        </body>
 </body>
 
 </html>

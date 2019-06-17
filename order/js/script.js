@@ -1,16 +1,16 @@
 /*********************checkbox workability************* */
-$(document).ready()
-function validateWhichOne(){
-    var checkboxes=document.getElementsByName("");
- var items=0;
-  for (var i=0;i<checkboxes.length;i++)
-  {
-      if(checkboxes[i].checked)
-      items++;
-  }
-if(items>1){
-    alert ("you cannt select more than two in one pizza")
-}
+/*$(document).ready()
+
+function validateWhichOne() {
+    var checkboxes = document.getElementsByName("");
+    var items = 0;
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked)
+            items++;
+    }
+    if (items > 1) {
+        ("you cannt select more than two in one pizza")
+    }
 }
 $("#submit").click(function () {
     $("form").slideToggle();
@@ -22,91 +22,92 @@ $("#order").click(function () {
     $("form").hide();
 });
 
-/******************prices Workability****************** */
-
-
+/******************menu select****************** */
+$(document).ready(function() {
+    $("form#customized-pizza").submit(function(event) {
+      event.preventDefault();
+      var customSize = $("select#size").val();
+      var customcrust = $("select#topping").val();
+      var customtopping = $("select#crust").val();
+      var newPizzaOrder = new Placeorder(customSize, customcrust, customtopping);
+      newPizzaOrder.costOfPizza();
+      totalOrderPrice.push(newPizzaOrder.price);
+      $("#pizza-size").show();
+      $("#pizza-crust").show();
+      $("#pizza-topping").show();
+      $("#pizza-size").append("\t" + "\t" + customSize);
+      $("#pizza-crust").append("\t" + "\t" + customcrust);
+      $("#pizza-topping").append("\t" + "\t" + customtopping);
+      $("#final-cost").text("\t" + "\t" + newPizzaOrder.totalCost());
+    });
+    $("#checkout-btn").click(function() {
+      location.reload();
+    });
+  });
+  $(document).ready(function() {
+    $("#delivery-btn").click(function() {
+      $("#address-form").fadeIn();
+    });
+    $("#address-btn").click(function() {
+      $("#address-form").slideUp();
+      $("#alert-success").fadeIn();
+    });
+  });
   
-var crustOne={name:"crispy",price:100}
-var crustTwo={name:"stuffed",price:200}
-var crustThree={name:"Glutten Free",price:50}
-
-var Crust={
-    name:"crusts",
-    types:[crustOne,crustTwo,crustThree]
-}
 
 
 
-var topOne={ name:"Pepperoni",price:600,Crust}
-var topTwo={name:"Mushroom",price:500,Crust}
-var topThree={name:"Bacon",price:700,Crust}
-var topFour={name:"Extra Cheese",price:200,Crust}
-var topFive={name: "Pesto",price:600,Crust}
 
-var Toppings={
-    name:"toppings",
-    types:[topOne,topTwo,topThree,topFour,topFive,]
-}
-
-var sizeOne={name:"small",price:1000,Toppings}
-var sizeTwo={name:"medium",price:1200,Toppings}
-var sizeThree={name:"large",price:1500,Toppings}
-  
-var sizes=[sizeOne,sizeTwo,sizeThree]
- 
-/*sizes.forEach(function(size){
-    alert(size.Toppings.crust)
+/*pizzaSize.forEach(function(size){
+    (size.pizzaToppings.pizzaCrust)
 })
 
 /*******************************Bussiness logic***************************** */
- function order(size,topping,crust){
-    
-     var items =document.getElementById("pop").value;
-    sizes=["large","medium","small"];
-    Toppings=["Pepperoni","Mushroom","Bacon","Extra Cheese","Pesto"];
-    Crust=["Crispy","Stuffed","Glutten Free"];
-    price =0;
-    var results=document.querySelector("#final");
+    var totalOrderPrice = [];
 
-    if (size ===sizes[0]){
-         results.innerHTML= price+=1500
-    }
-    if (size===sizes[1]){
-      results.innerHTML= price+=1200
-    }
-    if (size===sizes[2]){
-      results.innerHTML= price+=1000
-    }
-    if (topping===Toppings[0]){
-        results.innerHTML= price+=600
-    }
-    if (topping===Toppings[1]){
-        results.innerHTML=price+=500
-    } 
-    if(topping===Toppings[2]){
-        results.innerHTML=  price+=700
-    }  
-    if(topping===Toppings[3]){
-        results.innerHTML= price+=200
-    }
-    if(topping===Toppings[4]){
-        results.innerHTML= price+=600
-    }
-    if (crust===Crust[0]){
-        results.innerHTML= price+=100
-    }
-    if(crust===crust[1]){
-        results.innerHTML= price+=200
-    }
-    if (crust===Crust[2]){
-        results.innerHTML= price+=50
-    }
+    function Order(size, topping, crust) {
+        this.size = size;
+        this.topping = topping;
+        this.crust = crust;
+        this.price = 0;
 
-}
-  
+    };
+    var pizzaSize = ["large", "medium", "small"];
+    var pizzaToppings = ["Pepperoni", "Mushroom", "Bacon", "Extra Cheese", "Pesto"];
+    var pizzaCrust = ["Crispy", "Stuffed", "Glutten Free"];
 
+    Order.prototype.Placeorder = function () {
 
+        if (this.size === pizzaSize[0]) {
+            this.price += 1500;
+        } else if (this.size === pizzaSize[1]) {
+            this.price += 1200;
+        } else if (this.size === pizzaSize[2]) {
+            this.price += 1000;
+        } else if (this.topping === pizzaToppings[0]) {
+            this.price += 600;
+        } else if (this.topping === pizzaToppings[1]) {
+            this.price += 500;
+        } else if (this.topping === pizzaToppings[2]) {
+            this.price += 700;
+        } else if (this.topping === pizzaToppings[3]) {
+            this.price += 200;
+        } else if (this.topping === pizzaToppings[4]) {
+            this.price += 600;
+        } else if (this.crust === pizzaCrust[0]) {
+            this.price += 100;
+        } else if (this.crust === pizzaCrust[1]) {
+            this.price += 200;
+        } else if (this.crust === pizzaCrust[2]) {
+            this.price += 50;
+        }
+        return this.price
+    };
 
-
-
-
+    Order.prototype.Pizzacost = function () {
+        var shoppingCartTotal = 0;
+        for (var order = 0; order < totalOrderPrice.length; order++) {
+            shoppingCartTotal += totalOrderPrice[order];
+        }
+        return shoppingCartTotal;
+    };

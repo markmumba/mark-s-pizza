@@ -51,10 +51,13 @@ p1:hover{
     font-size: 20px;
     color: black;
 }
-{
-    display:none;
+#address-form {
+    display: none;
+    color: black;
 }
-
+#alert-success{
+    display: none;
+  }
 /* p1::before{ 
     content:"";
     display: block;
