@@ -3,9 +3,10 @@
 
 <head>
     <title>order menu</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/fonts.css">
     <link rel="shortcut icon" href="../image/pizza-slice.png">
     <script type="text/javascript" src="../js/jquery-3.4.1.js"></script>
@@ -13,56 +14,63 @@
 </head>
 
 <body>
-    <h1> order menu</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <img src="../image/7.jpg" style="width:300px;height:300px;">
-                <p>size</p>
-                <form class="form">
-                    <input type="checkbox" name="size" value="large" onclick="validateWhichOne"> large<br>
-                    <input type="checkbox" name="size" value="medium" onclick="validateWhichOne"> medium<br>
-                    <input type="checkbox" name="size" value="small" onclick="validateWhichOne"> small
-                </form>
-                <input type="text" placeholder="" class="form-control popovers" data-toggle="popover"
-                    data-placement="top" data-original-title="The Title" data-content="Content goes here..."
-                    data-trigger="click" aria-describedby="popover369342">
+    <div class="all">
+        <h1> order menu</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <img src="../image/7.jpg" style="width:300px;height:300px;">
+                    <p>size</p>
+                    <form class="form">
+                        <input type="checkbox" name="size" value="large" onclick="validateWhichOne"> large<br>
+                        <input type="checkbox" name="size" value="medium" onclick="validateWhichOne"> medium<br>
+                        <input type="checkbox" name="size" value="small" onclick="validateWhichOne"> small
+                    </form>
+
+                </div>
+                <div class="col-4">
+                    <img src="../image/3.jpg" style="width:300px;height:300px;">
+                    <p>Toppings</p>
+                    <form class="form">
+                        <input type="checkbox" name="type" value="Pepperoni" onclick="validateWhichOne"> Pepperoni<br>
+                        <input type="checkbox" name="type" value="Mushroom" onclick="validateWhichOne">Mushroom<br>
+                        <input type="checkbox" name="type" value="Bacon" onclick="validateWhichOne">Bacon<br>
+                        <input type="checkbox" name="type" value="Extra Cheese" onclick="validateWhichOne">Extra
+                        Cheese<br>
+                        <input type="checkbox" name="type" value="Pesto" onclick="validateWhichOne">Pesto
+                    </form>
+
+                </div>
+                <div class="col-4">
+                    <img src="../image/9.jpg" style="width:300px;height:300px;">
+                    <p>crust</p>
+                    <form class="form">
+                        <input type="checkbox" name="crust" value="Crispy " onclick="validateWhichOne"> Crispy<br>
+                        <input type="checkbox" name="crust" value="Stuffed" onclick="validateWhichOne"> Stuffed<br>
+                        <input type="checkbox" name="crust" value="Glutten free" onclick="validateWhichOne"> Glutten
+                        free
+                    </form>
+
+                </div>
+
             </div>
-            <div class="col-4">
-                <img src="../image/3.jpg" style="width:300px;height:300px;">
-                <p>Toppings</p>
-                <form class="form">
-                    <input type="checkbox" name="type" value="Pepperoni" onclick="validateWhichOne"> Pepperoni<br>
-                    <input type="checkbox" name="type" value="Mushroom" onclick="validateWhichOne">Mushroom<br>
-                    <input type="checkbox" name="type" value="Bacon" onclick="validateWhichOne">Bacon<br>
-                    <input type="checkbox" name="type" value="Extra Cheese" onclick="validateWhichOne">Extra Cheese<br>
-                    <input type="checkbox" name="type" value="Pesto" onclick="validateWhichOne">Pesto
+            <p1><input type="button" class="btn btn-1" onclick="printChecked()" value="order now" id="submitt"></p1>
+            <div id="orderform">
+                <form>
+                    size: <input type="text" placeholder="" title="" data-toggle="tooltip" data-trigger="size"
+                        class="form-control tooltips" data-original-title="Tooltip goes here">
+                    Toppings:<input type="text" placeholder="" title="" data-toggle="tooltip"
+                        data-trigger="toppings" class="form-control tooltips" data-original-title="Tooltip goes here">
+                    crust:<input type="text" placeholder="" title="" data-toggle="tooltip" data-trigger="crust"
+                        class="form-control tooltips" data-original-title="Tooltip goes here">
+                    price:<input type="text" placeholder="" title="" data-toggle="tooltip" data-trigger="price"
+                        class="form-control tooltips" data-original-title="Tooltip goes here">
                 </form>
-                <input type="text" placeholder="" class="form-control popovers" data-toggle="popover"
-                    data-placement="top" data-original-title="The Title" data-content="Content goes here..."
-                    data-trigger="click" aria-describedby="popover369342">
-            </div>
-            <div class="col-4">
-                <img src="../image/9.jpg" style="width:300px;height:300px;">
-                <p>crust</p>
-                <form class="form">
-                    <input type="checkbox" name="crust" value="Crispy " onclick="validateWhichOne"> Crispy<br>
-                    <input type="checkbox" name="crust" value="Stuffed" onclick="validateWhichOne"> Stuffed<br>
-                    <input type="checkbox" name="crust" value="Glutten free" onclick="validateWhichOne"> Glutten free
-                </form>
-                <input type="text" placeholder="" class="form-control popovers" data-toggle="popover"
-                    data-placement="top" data-original-title="The Title" data-content="Content goes here..."
-                    data-trigger="click" aria-describedby="popover369342">
+                <p1><input type="button" class="btn btn-1" onclick="printChecked()" value="re-order" id="order"></p1>
             </div>
 
         </div>
-        <p1><input type="button" class="btn btn-1" onclick="printChecked()" value="order now" id="submitt"></p1>
-        <div id="orderform">
-            <form>
-                
-            </div>
     </div>
-
 </body>
 
 </html>

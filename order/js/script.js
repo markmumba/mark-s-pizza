@@ -1,18 +1,14 @@
 /*********************checkbox workability************* */
 $(document).ready()
-function validateWhichOne(){
-    var checkboxes=document.getElementsByName("");
- var items=0;
-  for (var i=0;i<checkboxes.length;i++)
-  {
-      if(checkboxes[i].checked)
-      items++;
-  }
-if(items>1){
-    alert ("you cannt select more than two in one pizza")
-}
-}
+$("#submit").click(function () {
+    $("#orderform").Toggle();
+    $(".all").hide();
+});
 
+$("#order").click(function () {
+    $(".all").Toggle();
+    $("#orderform").hide();
+});
 
 
 
