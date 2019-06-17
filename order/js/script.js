@@ -24,7 +24,7 @@ $("#order").click(function () {
 
 /******************prices Workability****************** */
 
-  /*
+
   
 var crustOne={name:"crispy",price:100}
 var crustTwo={name:"stuffed",price:200}
@@ -57,7 +57,7 @@ var sizes=[sizeOne,sizeTwo,sizeThree]
 /*sizes.forEach(function(size){
     alert(size.Toppings.crust)
 })
-*/
+
 /*******************************Bussiness logic***************************** */
  function order(size,topping,crust){
     
