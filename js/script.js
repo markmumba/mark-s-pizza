@@ -17,11 +17,11 @@ var pizzaTopping = ["Bacon", "Chicken", "Beef", "Vegetables"];
 
 Placeorder.prototype.costOfPizza = function() {
   if (this.size === pizzaSize[0]) {
-    this.price += 300;
+    this.price += 1000;
   } else if (this.size === pizzaSize[1]) {
-    this.price += 400;
+    this.price += 1500;
   } else if (this.size === pizzaSize[2]) {
-    this.price += 500;
+    this.price += 2000;
   }
   if (this.crust === pizzaCrust[0]) {
     this.price += 100;
